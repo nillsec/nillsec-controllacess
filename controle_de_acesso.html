@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestão de Controle de Acesso</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="controle_de_acesso.css">
+</head>
+<body>
+    <section class="section">
+        <div class="container">
+            <h1 class="title has-text-centered">Gestão de Controle de Acesso</h1>
+            <div class="columns">
+                <!-- Gestão de Usuários -->
+                <div class="column is-half">
+                    <div class="box">
+                        <h2 class="subtitle">Usuários</h2>
+                        <table class="table is-fullwidth is-striped">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Nome</th>
+                                    <th>Email</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody id="userTableBody">
+                                <!-- Os usuários serão inseridos aqui dinamicamente -->
+                            </tbody>
+                        </table>
+                        <button class="button is-primary" id="addUserBtn">Adicionar Usuário</button>
+                    </div>
+                </div>
+                <!-- Logs de Acesso -->
+                <div class="column is-half">
+                    <div class="box">
+                        <h2 class="subtitle">Logs de Acesso</h2>
+                        <table class="table is-fullwidth is-striped">
+                            <thead>
+                                <tr>
+                                    <th>Data</th>
+                                    <th>Usuário</th>
+                                    <th>Ação</th>
+                                </tr>
+                            </thead>
+                            <tbody id="logsTableBody">
+                                <!-- Os logs serão inseridos aqui dinamicamente -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- Seção de Redirecionamento -->
+            <div class="columns is-multiline">
+                <div class="column is-one-quarter">
+                    <div class="box redirection-box">
+                        <a href="sem_internet.html" target="_blank">Portão entrada</a>
+                    </div>
+                </div>
+                <div class="column is-one-quarter">
+                    <div class="box redirection-box">
+                        <a href="sem_internet.html" target="_blank">Sala de suporte</a>
+                    </div>
+                </div>
+                <div class="column is-one-quarter">
+                    <div class="box redirection-box">
+                        <a href="sem_internet.html" target="_blank">Diretoria</a>
+                    </div>
+                </div>
+                <div class="column is-one-quarter">
+                    <div class="box redirection-box">
+                        <a href="sem_internet.html" target="_blank">Saida copa</a>
+                    </div>
+                </div>
+                <div class="column is-one-quarter">
+                    <div class="box redirection-box">
+                        <a href="sem_internet.html" target="_blank">Servidor 5</a>
+                    </div>
+                </div>
+                <!-- Adicione mais quadrados conforme necessário -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal para adicionar usuário -->
+    <div class="modal" id="userModal">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+            <header class="modal-card-head">
+                <p class="modal-card-title">Adicionar Usuário</p>
+                <button class="delete" aria-label="close"></button>
+            </header>
+            <section class="modal-card-body">
+                <div class="field">
+                    <label class="label">Nome</label>
+                    <div class="control">
+                        <input class="input" type="text" id="userName" placeholder="Nome do usuário">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Email</label>
+                    <div class="control">
+                        <input class="input" type="email" id="userEmail" placeholder="Email do usuário">
+                    </div>
+                </div>
+            </section>
+            <footer class="modal-card-foot">
+                <button class="button is-success" id="saveUserBtn">Salvar</button>
+                <button class="button">Cancelar</button>
+            </footer>
+        </div>
+    </div>
+
+    <script src="controle_de_acesso.js"></script>
+</body>
+</html>

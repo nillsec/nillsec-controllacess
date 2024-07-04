@@ -1,0 +1,68 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(45deg, #fcfcfc, #000000, #000000);
+    background-size: 600% 600%;
+    animation: rgbAnimation 10s ease infinite;
+    font-family: Arial, sans-serif;
+    color: #ffffff00;
+}
+
+@keyframes rgbAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.section {
+    background: rgba(0, 0, 0, 0);
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+.title {
+    color: #d10000;
+}
+
+.subtitle {
+    color: #d10000;
+}
+
+.table th, .table td {
+    text-align: center;
+}
+
+.modal-card-body .field {
+    margin-bottom: 1rem;
+}
+
+.redirection-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    background-color: #d10000f1;
+    color: #0c0c0c00;
+    font-size: 1.5rem;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.redirection-box a {
+    color: #ffffff;
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.redirection-box:hover {
+    background-color: #b80600;
+    transform: scale(1.05);
+}

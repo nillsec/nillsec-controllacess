@@ -1,0 +1,30 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f7f7f7;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+}
+
+.game-container {
+    text-align: center;
+}
+
+.game-message {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+canvas {
+    border: 2px solid #333;
+    background-color: #fff;
+    display: block;
+    margin: 0 auto;
+}
+
+#gameInfo {
+    margin-top: 1rem;
+}

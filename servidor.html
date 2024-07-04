@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servidor de Arquivos - SYSTENS LTDA</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            text-align: center;
+            max-width: 800px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            background-color: rgba(51, 51, 51, 0.8);
+        }
+        h1 {
+            color: #f00;
+            margin-bottom: 20px;
+        }
+        .panel {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+            margin-top: 20px;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        .panel h2 {
+            color: #f00;
+            margin-bottom: 10px;
+        }
+        .panel ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .panel li {
+            margin-bottom: 10px;
+        }
+        .panel a {
+            color: #fff;
+            text-decoration: none;
+            border-bottom: 1px dashed #fff;
+        }
+        .panel a:hover {
+            border-bottom-style: solid;
+        }
+        .logout-link {
+            margin-top: 20px;
+        }
+        .logout-link a {
+            color: #fff;
+            text-decoration: none;
+            border-bottom: 1px dashed #fff;
+        }
+        .logout-link a:hover {
+            border-bottom-style: solid;
+        }
+        .panel-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .panel-block {
+            width: calc(33% - 20px);
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .panel-block h3 {
+            color: #f00;
+            margin-bottom: 10px;
+        }
+        .panel-block ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .panel-block li {
+            margin-bottom: 10px;
+        }
+        .panel-block a {
+            color: #fff;
+            text-decoration: none;
+            border-bottom: 1px dashed #fff;
+        }
+        .panel-block a:hover {
+            border-bottom-style: solid;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Servidor de Arquivos - SYSTENS LTDA</h1>
+        <div class="panel-container">
+            <div class="panel-block">
+                <h3>Controle de Acesso</h3>
+                <ul>
+                    <li><a href="#">Logs de Acesso</a></li>
+                    <li><a href="#">Permissões de Usuários</a></li>
+                    <li><a href="#">Segurança da Rede</a></li>
+                </ul>
+            </div>
+            <div class="panel-block">
+                <h3>Gerenciar Usuários</h3>
+                <ul>
+                    <li><a href="#">Adicionar Novo Usuário</a></li>
+                    <li><a href="#">Editar Usuários</a></li>
+                    <li><a href="#">Remover Usuários</a></li>
+                </ul>
+            </div>
+            <div class="panel-block">
+                <h3>Configurações</h3>
+                <ul>
+                    <li><a href="#">Configurações Gerais</a></li>
+                    <li><a href="#">Preferências de Usuário</a></li>
+                    <li><a href="#">Configurações de Segurança</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="logout-link">
+            <a href="logout.html">Sair</a>
+        </div>
+    </div>
+</body>
+</html>

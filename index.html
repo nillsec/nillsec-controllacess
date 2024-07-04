@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACESSO SERVIDOR SYSTENS</title>
+    <style>
+        
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(45deg, #ffffff, #000000, #000000);
+            background-size: 600% 600%;
+            animation: rgbAnimation 10s ease infinite;
+            font-family: Arial, sans-serif;
+            color: #fff;
+        }
+
+        @keyframes rgbAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; } 
+        }
+
+
+        .container {
+            width: 80%;
+            max-width: 500px;
+            background-color: #0000004d; /* Fundo cinza escuro */
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        .container h1 {
+            color: #f00; /* Título em vermelho */
+            margin-bottom: 20px;
+        }
+        .tabs {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+        .tabs button {
+            background-color: #444;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            flex: 1;
+            margin: 0 5px;
+        }
+        .tabs button.active {
+            background-color: #f00;
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .tab-content input[type="text"],
+        .tab-content input[type="password"] {
+            width: 100%;
+            padding: 10px 0;
+            margin: 10px 0;
+            border: none;
+            border-radius: 1px;
+        }
+        .tab-content input[type="submit"] {
+            background-color: #f00; /* Fundo vermelho */
+            color: #fff; /* Texto branco */
+            border: none;
+            padding: 10px;
+            width: 100%;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .tab-content input[type="submit"]:hover {
+            background-color: #c00; /* Fundo vermelho escuro ao passar o mouse */
+        }
+        .recover-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .recover-link a {
+            color: #fff;
+            text-decoration: none;
+            border-bottom: 1px dashed #fff;
+        }
+        .recover-link a:hover {
+            border-bottom-style: solid;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>SYSTENS LTDA</h1>
+        <div class="tabs">
+            <button class="tab-button active" data-tab="access-control">Servidor de arquivos</button>
+            <button class="tab-button" data-tab="database">Painel de controle</button>
+        </div>
+        <div id="access-control" class="tab-content active">
+            <form id="loginFormAccess" onsubmit="return handleLogin(event, 'access')">
+                <input type="text" id="usernameAccess" placeholder="Usuário" required>
+                <input type="password" id="passwordAccess" placeholder="Senha" required>
+                <input type="submit" value="Login">
+            </form>
+            <div class="recover-link">
+                <a href="recover_access.html">Esqueci minha senha (Servidor de arquivos)</a>
+            </div>
+        </div>
+        <div id="database" class="tab-content">
+            <form id="loginFormDatabase" onsubmit="return handleLogin(event, 'database')">
+                <input type="text" id="usernameDatabase" placeholder="Usuário" required>
+                <input type="password" id="passwordDatabase" placeholder="Senha" required>
+                <input type="submit" value="Login">
+            </form>
+            <div class="recover-link">
+                <a href="recover_database.html">Esqueci minha senha (Painel de controle)</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+
+
+
+        // Função para alternar entre as abas
+        document.querySelectorAll('.tab-button').forEach(button => {
+            button.addEventListener('click', () => {
+                document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+                button.classList.add('active');
+                document.getElementById(button.getAttribute('data-tab')).classList.add('active');
+            });
+        });
+
+        function handleLogin(event, tab) {
+            event.preventDefault();
+            let username, password;
+
+            if (tab === 'access') {
+                username = document.getElementById('usernameAccess').value;
+                password = document.getElementById('passwordAccess').value;
+
+                // Simulação de autenticação para servidor de arquivos
+                if (username === 'GESTOR' && password === '1234') {
+                    window.location.href = 'controle_de_acesso.html'; // Redirecionar para a página inicial do servidor de arquivos
+                } else {
+                    alert('Usuário ou senha incorretos para Controle de Acesso');
+                }
+            } else if (tab === 'database') {
+                username = document.getElementById('usernameDatabase').value;
+                password = document.getElementById('passwordDatabase').value;
+
+                // Simulação de autenticação para Painel de controle
+                if (username === 'GESRTORTECNOLOGIA' && password === '1234') {
+                    window.location.href = 'controle_de_acesso.html'; // Redirecionar para a página inicial do painel de controle
+                } else {
+                    alert('Usuário ou senha incorretos para Banco de Dados');
+                }
+            }
+        }
+    </script>
+</body>
+</html>

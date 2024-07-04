@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperação de Conta - Painel de Controle</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #000; /* Fundo preto */
+            color: #fff; /* Texto branco */
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+        .container {
+            width: 80%;
+            max-width: 500px;
+            background-color: #3333336c; /* Fundo cinza escuro */
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        .container h1 {
+            color: #f00; /* Título em vermelho */
+            margin-bottom: 20px;
+        }
+        form {
+            margin-top: 20px;
+        }
+        input[type="email"] {
+            width: 100%;
+            padding: 10px 0;
+            margin: 10px 0;
+            border: none;
+            border-radius: 1px;
+        }
+        input[type="submit"] {
+            background-color: #f00; /* Fundo vermelho */
+            color: #fff; /* Texto branco */
+            border: none;
+            padding: 10px;
+            width: 100%;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #c00; /* Fundo vermelho escuro ao passar o mouse */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Recuperação de Conta - Painel de Controle</h1>
+        <form id="recoverFormDatabase" onsubmit="return handleRecover(event, 'database')">
+            <input type="email" id="emailDatabase" placeholder="Digite seu e-mail cadastrado" required>
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
+
+    <script>
+        function handleRecover(event, tab) {
+            event.preventDefault();
+            const email = document.getElementById('emailDatabase').value;
+
+            // Simulação de envio de e-mail para recuperação de conta
+            alert(`Um e-mail será enviado para ${email} com instruções para recuperar sua conta do Painel de Controle.`);
+        }
+    </script>
+</body>
+</html>
